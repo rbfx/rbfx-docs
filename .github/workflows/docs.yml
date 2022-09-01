@@ -1,0 +1,41 @@
+name: Documentation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  Documentation:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Install Dependencies
+        shell: bash
+        run: |
+          sudo apt-get install -y --no-install-recommends doxygen
+
+      - name: Generate
+        shell: bash
+        run: |
+          # Generate CMake cache.
+          mkdir cmake-build
+          cd cmake-build
+          cmake ..
+
+      - name: Build
+        shell: bash
+        run: |
+          cd cmake-build
+          cmake --build . --target doc
+
+      - name: Deploy
+        if: github.repository == 'rbfx/rbfx-docs'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.RBFX_DOCS_DEPLOY_TOKEN }}
+          external_repository: rbfx/rbfx.github.io
+          publish_dir: ./cmake-build/html/
+          publish_branch: master
