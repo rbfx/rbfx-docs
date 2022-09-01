@@ -4,6 +4,12 @@ on:
   push:
   pull_request:
 
+env:
+  URHO3D_DOCS: ON
+  URHO3D_ENABLE_ALL: ON
+  URHO3D_CSHARP: ON
+  BUILD_SHARED_LIBS: ON
+
 jobs:
   Documentation:
     runs-on: ubuntu-20.04
@@ -11,6 +17,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
+
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+          path: rbfx
+          repository: rbfx/rbfx
+          ref: master
 
       - name: Install Dependencies
         shell: bash
@@ -20,16 +33,24 @@ jobs:
       - name: Generate
         shell: bash
         run: |
-          # Generate CMake cache.
-          mkdir cmake-build
-          cd cmake-build
-          cmake ..
+          # Source code must be outside of docs repo so by including root docs dir we dont also consume ThirdParty source code
+          mv rbfx ..
+          cd ..
+          mkdir cmake-build-rbfx
+          cd cmake-build-rbfx
+          cmake ../rbfx
+
+          cd ..
+          mkdir cmake-build-docs
+          cd cmake-build-docs
+          cmake ../rbfx-docs
 
       - name: Build
         shell: bash
         run: |
-          cd cmake-build
+          cd ../cmake-build-docs
           cmake --build . --target doc
+          mv html ../rbfx-docs/html    # Allow deployment/artifact steps can find this dir
 
       - name: Deploy
         if: github.repository == 'rbfx/rbfx-docs'
@@ -37,5 +58,10 @@ jobs:
         with:
           personal_token: ${{ secrets.RBFX_DOCS_DEPLOY_TOKEN }}
           external_repository: rbfx/rbfx.github.io
-          publish_dir: ./cmake-build/html/
+          publish_dir: html
           publish_branch: master
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: 'rbfx-docs-${{ github.sha }}'
+          path: html
