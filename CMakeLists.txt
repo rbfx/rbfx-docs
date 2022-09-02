@@ -85,6 +85,7 @@ if (DOXYGEN_FOUND)
 
     # Add custom 'doc' target for generating Urho3D documentation
     file (GLOB DOX_FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/pages/*.md
         ${CMAKE_CURRENT_SOURCE_DIR}/legacy/*.dox)
     add_custom_command (OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/html/index.html
         COMMAND ${DOXYGEN_EXECUTABLE} generated/Doxyfile ${REDIRECT_STDOUT}
