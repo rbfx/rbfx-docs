@@ -4,9 +4,9 @@ Engine integrates [tracy](https://bitbucket.org/wolfpld/tracy/) for CPU profilin
 2. Mark code sections you wish to profile with `URHO3D_PROFILE*` macros.
 3. Connect profiler application by pressing `Connect`:
 
-[[images/connect.png]]
+![](images/connect.png)
 
-[[images/profiler.png]]
+![](images/profiler.png)
 
 # Macros
 

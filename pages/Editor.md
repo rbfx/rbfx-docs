@@ -12,6 +12,6 @@ Current features:
 * Switching renderpaths
 * UI layout and style editor
 
-[[images/editor-scene.png]]
+![](images/editor-scene.png)
 
-[[images/editor-ui.png]]
+![](images/editor-ui.png)

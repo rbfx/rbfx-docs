@@ -33,4 +33,4 @@ During its lifetime, `BehaviorNetworkObject` redirects `NetworkObject` calls dir
 
 User class derived from `NetworkBehavior` should specify which callbacks should be called for this behavior, for performance reasons.
 
-See [Standard Network Behaviors](Standard-Network-Behaviors) for built-in `NetworkBehavior`s.
+See [Standard Network Behaviors](Standard-Network-Behaviors.md) for built-in `NetworkBehavior`s.

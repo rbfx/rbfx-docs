@@ -1,3 +1,8 @@
+Documentation of Urho3D Rebel Fork {#mainpage}
+==================================
+
+**Note**: Legacy and sometimes outdated documentation inherited from original Urho3D project is available \ref LegacyDocumentation "here"
+
 **Disclaimer**: this wiki doesn't attempt to describe every single feature, class or function in the framework.
 It merely offers high-level overview of subsystems and features.
 It would be too expensive to maintain otherwise.
@@ -5,18 +10,18 @@ Use this wiki together with reading framework headers in `Source/Urho3D/*` and r
 
 ### Tutorials
 
-* [First Application](first-application)
-* [Using SDK](Using-SDK)
+* [First Application](First-Application.md)
+* [Using SDK](Using-SDK.md)
 
 ### Miscellaneous
 
-* [Profiling](Profiling)
-* [Editor Overview](Editor)
-    * [Plugins](Plugins)
-* [C# Support](C%23-support)
-* [External subsystems and samples](External-subsystems-and-samples)
-* [rbfx and Urho3D differences](rbfx-and-Urho3D-differences)
-* [Migration from vanilla Urho3D](Migration-from-vanilla-Urho3D)
+* [Profiling](Profiling.md)
+* [Editor Overview](Editor.md)
+    * [Plugins](Plugins.md)
+* [C# Support](C#-support.md)
+* [External subsystems and samples](External-subsystems-and-samples.md)
+* [rbfx and Urho3D differences](rbfx-and-Urho3D-differences.md)
+* [Migration from vanilla Urho3D](Migration-from-vanilla-Urho3D.md)
 
 ### Project Structure
 
@@ -56,34 +61,34 @@ TODO: Write me
 
 * Scene Overview
 * Nodes and Components
-* [Scene Animation](Scene-Animation)
+* [Scene Animation](Scene-Animation.md)
 
 ### Graphics and Rendering
 
-* [Low-level rendering API](Low-level-Rendering-API)
-* [Scene rendering pipeline](Scene-Rendering-Pipeline)
+* [Low-level rendering API](Low-level-Rendering-API.md)
+* [Scene rendering pipeline](Scene-Rendering-Pipeline.md)
 * Scene Components:
-    * [Subsystems](Scene-Rendering-Subsystems)
-    * [Zones](Rendering-Zones)
-    * [Lights](Rendering-Lights)
-    * [Geometries](Rendering-Geometries)
-    * [Light Probes](Rendering-Light-Probes)
-    * [Reflection Probes](Rendering-Reflection-Probes)
+    * [Subsystems](Scene-Rendering-Subsystems.md)
+    * [Zones](Rendering-Zones.md)
+    * [Lights](Rendering-Lights.md)
+    * [Geometries](Rendering-Geometries.md)
+    * [Light Probes](Rendering-Light-Probes.md)
+    * [Reflection Probes](Rendering-Reflection-Probes.md)
 * Resources:
-    * [Models](Model-Resources)
-    * [Materials](Material-Resources)
-    * [Textures](Texture-Resources)
-    * [Techniques](Rendering-Techniques)
-    * [Shaders](Rendering-Shaders)
+    * [Models](Model-Resources.md)
+    * [Materials](Material-Resources.md)
+    * [Textures](Texture-Resources.md)
+    * [Techniques](Rendering-Techniques.md)
+    * [Shaders](Rendering-Shaders.md)
 
 ### Multiplayer and Networking
 
-* [Low-level transport](Low-level-Transport)
+* [Low-level transport](Low-level-Transport.md)
 * High-level Replication:
-    * [Replication Manager](Replication-Manager)
-    * [Network Objects](Network-Objects)
-        * [Standard Network Objects](Standard-Network-Objects)
-        * [Standard Network Behaviors](Standard-Network-Behaviors)
+    * [Replication Manager](Replication-Manager.md)
+    * [Network Objects](Network-Objects.md)
+        * [Standard Network Objects](Standard-Network-Objects.md)
+        * [Standard Network Behaviors](Standard-Network-Behaviors.md)
 
 ### UI Overview
 

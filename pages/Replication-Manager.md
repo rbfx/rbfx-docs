@@ -46,7 +46,7 @@ It consists of the ping itself and additional **InputBuffer** which depends on t
 
 This diagram (hopefully) illustrates the relationship between **ServerTime**, **ReplicaTime** and **InputTime**.
 
-[[images/Network-Times.svg]]
+![](images/Network-Times.svg)
 
 ## Sequence of the Frame on Server
 
