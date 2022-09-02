@@ -162,7 +162,7 @@ FULL_PATH_NAMES        = YES
 # will be relative from the directory where doxygen is started.
 # This tag requires that the tag FULL_PATH_NAMES is set to YES.
 
-STRIP_FROM_PATH        = /home/runner/work/rbfx-docs/rbfx/Source/Urho3D/
+STRIP_FROM_PATH        = "@SOURCE_CODE_DIR@/"
 
 # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of the
 # path mentioned in the documentation of a class, which tells the reader which
@@ -171,7 +171,7 @@ STRIP_FROM_PATH        = /home/runner/work/rbfx-docs/rbfx/Source/Urho3D/
 # specify the list of include paths that are normally passed to the compiler
 # using the -I flag.
 
-STRIP_FROM_INC_PATH    = /home/runner/work/rbfx-docs/rbfx/Source/Urho3D/
+STRIP_FROM_INC_PATH    = "@SOURCE_CODE_DIR@/"
 
 # If the SHORT_NAMES tag is set to YES, doxygen will generate much shorter (but
 # less readable) file names. This can be useful is your file systems doesn't
@@ -790,7 +790,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = "@CMAKE_CURRENT_SOURCE_DIR@/../rbfx/Source/Urho3D" \
+INPUT                  = "@SOURCE_CODE_DIR@/Urho3D" \
                          "@CMAKE_CURRENT_SOURCE_DIR@/../cmake-build-rbfx/Source/Urho3D/@CMAKE_BUILD_TYPE@" \
                          "@CMAKE_CURRENT_SOURCE_DIR@" \
                          "@CMAKE_CURRENT_BINARY_DIR@/generated"

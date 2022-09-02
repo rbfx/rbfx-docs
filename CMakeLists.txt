@@ -38,6 +38,9 @@ endmacro ()
 unset (CMAKE_FIND_ROOT_PATH)
 find_package (Doxygen REQUIRED)
 
+set (SOURCE_CODE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../rbfx/Source")
+get_filename_component (SOURCE_CODE_DIR ${SOURCE_CODE_DIR} ABSOLUTE)
+
 if (DOXYGEN_FOUND)
     # It is not an error when DOT is not found, instead just switching off the Doxygen's HAVE_DOT option
     find_package_handle_standard_args (Dot REQUIRED_VARS DOXYGEN_DOT_EXECUTABLE)
@@ -81,7 +84,8 @@ if (DOXYGEN_FOUND)
     endif ()
 
     # Add custom 'doc' target for generating Urho3D documentation
-    file (GLOB DOX_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.dox)
+    file (GLOB DOX_FILES
+        ${CMAKE_CURRENT_SOURCE_DIR}/legacy/*.dox)
     add_custom_command (OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/html/index.html
         COMMAND ${DOXYGEN_EXECUTABLE} generated/Doxyfile ${REDIRECT_STDOUT}
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/generated/Doxyfile ${DOX_FILES}
