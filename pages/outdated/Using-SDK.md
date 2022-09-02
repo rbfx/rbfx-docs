@@ -1,3 +1,6 @@
+Using framework as SDK {#outdated-using-as-sdk}
+======================
+
 If you wish to maintain engine code outside of your project you may build engine SDK. SDK is created by building install target:
 
 1. `cmake /path/to/code/repository -DCMAKE_INSTALL_PREFIX=/path/to/SDK [optional build options]`

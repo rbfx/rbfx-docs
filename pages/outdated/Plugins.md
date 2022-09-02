@@ -1,3 +1,6 @@
+Plugins {#outdated-plugins}
+=======
+
 Editor workflow is centered around plugins and scenes. User is expected to implement a custom logic in a plugin and use it in a scene. For example plugin may provide a component that implements movement of node it is attached to.
 
 ## Dynamic Plugins

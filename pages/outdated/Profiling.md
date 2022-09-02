@@ -1,3 +1,6 @@
+Profiling {#outdated-profiling}
+=========
+
 Engine integrates [tracy](https://bitbucket.org/wolfpld/tracy/) for CPU profiling. GPU profiling may be supported in the future. In order to profile your application do the following:
 
 1. Build engine with `-DURHO3D_PROFILING=ON`

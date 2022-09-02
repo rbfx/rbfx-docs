@@ -8,20 +8,13 @@ It merely offers high-level overview of subsystems and features.
 It would be too expensive to maintain otherwise.
 Use this wiki together with reading framework headers in `Source/Urho3D/*` and relevant comments.
 
-### Tutorials
+### Outdated
 
-* [First Application](First-Application.md)
-* [Using SDK](Using-SDK.md)
-
-### Miscellaneous
-
-* [Profiling](Profiling.md)
-* [Editor Overview](Editor.md)
-    * [Plugins](Plugins.md)
-* [C# Support](C#-support.md)
-* [External subsystems and samples](External-subsystems-and-samples.md)
-* [rbfx and Urho3D differences](rbfx-and-Urho3D-differences.md)
-* [Migration from vanilla Urho3D](Migration-from-vanilla-Urho3D.md)
+* \subpage outdated-first-application
+* \subpage outdated-using-as-sdk
+* \subpage outdated-profiling
+* \subpage outdated-plugins
+* \subpage outdated-csharp-support
 
 ### Project Structure
 
