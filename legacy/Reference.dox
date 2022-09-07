@@ -682,11 +682,11 @@ The only per-instance data that the rendering system supplies by itself are the 
 
 \section Rendering_Further Further details
 
-See also \ref VertexBuffers "Vertex buffers", \ref Materials "Materials", \ref Shaders "Shaders", \ref Lights "Lights and shadows", \ref RenderPaths "Render path", \ref SkeletalAnimation "Skeletal animation", \ref Particles "Particle systems", \ref Zones "Zones", and \ref AuxiliaryViews "Auxiliary views".
+See also \subpage VertexBuffers "Vertex buffers", \subpage Materials "Materials", \subpage Shaders "Shaders", \subpage Lights "Lights and shadows", \subpage RenderPaths "Render path", \subpage SkeletalAnimation "Skeletal animation", \subpage Particles "Particle systems", \subpage Zones "Zones", and \subpage AuxiliaryViews "Auxiliary views".
 
-See \ref RenderingModes "Rendering modes" for detailed discussion on the forward, light pre-pass and deferred rendering modes.
+See \subpage RenderingModes "Rendering modes" for detailed discussion on the forward, light pre-pass and deferred rendering modes.
 
-See \ref APIDifferences "Differences between rendering APIs" for what to watch out for when using the low-level rendering functionality directly.
+See \subpage APIDifferences "Differences between rendering APIs" for what to watch out for when using the low-level rendering functionality directly.
 
 
 \page RenderingModes Rendering modes
@@ -2778,12 +2778,6 @@ In addition to UDP messaging, the network subsystem allows to make HTTP requests
 \section Network_Simulation Network conditions simulation
 
 The Network subsystem can optionally add delay to sending packets, as well as simulate packet loss. See \ref Network::SetSimulatedLatency "SetSimulatedLatency()" and \ref Network::SetSimulatedPacketLoss "SetSimulatedPacketLoss()".
-
-\page Database Database
-
-The Database subsystem is built into the Urho3D library only when one of these two \ref Build_Options "build options" are enabled: URHO3D_DATABASE_ODBC and URHO3D_DATABASE_SQLITE. When both options are enabled then URHO3D_DATABASE_ODBC takes precedence. These build options determine which database API the subsystem will use. The ODBC DB API is more suitable for native application, especially the game server, where it allows the app to establish connection to any ODBC compliant databases like SQLite, MySQL/MariaDB, PostgreSQL, Sybase SQL, Oracle, etc. The SQLite DB API, on the other hand, is suitable for mobile application which embeds the SQLite database and its engine into the app itself. The Database subsystem wraps the underlying DB API using a unified URHO3D API, so no or minimal code changes are required to the library user when switching between these two build options.
-
-Currently the implementation just supports immediate SQL statement execution. Prepared statements and transaction management will be added later when the need arises. The subsystem has a simple database connection pooling capability. This internal database connection pool should not be confused with ODBC connection pool option when ODBC DB API is being used. The internal pooling is enabled by default, except when ODBC DB API is being used and when ODBC driver manager 3.0 or later is being detected in the host system, in which case the ODBC connection pool option should be used instead to manage the database connection pooling.
 
 \page Multithreading Multithreading
 

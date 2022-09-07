@@ -1,7 +1,7 @@
 Documentation of Urho3D Rebel Fork {#mainpage}
 ==================================
 
-**Note**: Legacy and sometimes outdated documentation inherited from original Urho3D project is available \ref LegacyDocumentation "here"
+**Note**: Legacy and sometimes outdated documentation inherited from original Urho3D project is available \subpage LegacyDocumentation "here"
 
 **Disclaimer**: this wiki doesn't attempt to describe every single feature, class or function in the framework.
 It merely offers high-level overview of subsystems and features.

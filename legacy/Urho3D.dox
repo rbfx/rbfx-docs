@@ -10,52 +10,53 @@ rbfx is a fork of Urho3D (https://urho3d.github.io) and may be referred to as "U
 
 For getting started, see:
 
-\ref Building <br>
-\ref UsingLibrary <br>
-\ref Running <br>
-\ref Examples <br>
-\ref Structure <br>
-\ref Conventions <br>
-\ref EditorInstructions <br>
-\ref Misc_HowTos <br>
+\subpage Building <br>
+\subpage UsingLibrary <br>
+\subpage Running <br>
+\subpage Examples <br>
+\subpage Structure <br>
+\subpage Conventions <br>
+\subpage EditorInstructions <br>
+\subpage Misc_HowTos <br>
 
 For further reference, see:
 
-\ref Containers "Container types" <br>
-\ref ObjectTypes "Object types and factories" <br>
-\ref Subsystems "Subsystems" <br>
-\ref Events "Events" <br>
-\ref MainLoop "Engine initialization and main loop" <br>
-\ref SceneModel "Scene model" <br>
-\ref Resources "Resources" <br>
-\ref Localization "Localization" <br>
-\ref Rendering "Rendering" <br>
-\ref Compute "Compute" <br>
-\ref Input "Input" <br>
-\ref Audio "Audio" <br>
-\ref Physics "Physics" <br>
-\ref Navigation "Navigation" <br>
-\ref IK "Inverse Kinematics" <br>
-\ref UI "User interface" <br>
-\ref Urho2D_and_Physics2D "Urho2D and Physics2D" <br>
-\ref Serialization "Serialization" <br>
-\ref Network "Networking" <br>
-\ref Multithreading "Multithreading" <br>
-\ref AttributeAnimation "Attribute animation" <br>
-\ref CSharp "C# Scripting" <br>
-\ref Tools "Tools" <br>
-\ref Unicode "Unicode support" <br>
-\ref FileFormats "Custom file formats" <br>
-\ref CodingConventions "Coding conventions" <br>
-\ref ContributionChecklist "Contribution checklist" <br>
+\subpage Containers "Container types" <br>
+\subpage ObjectTypes "Object types and factories" <br>
+\subpage Subsystems "Subsystems" <br>
+\subpage Events "Events" <br>
+\subpage MainLoop "Engine initialization and main loop" <br>
+\subpage SceneModel "Scene model" <br>
+\subpage Resources "Resources" <br>
+\subpage Localization "Localization" <br>
+\subpage Rendering "Rendering" <br>
+\subpage Compute "Compute" <br>
+\subpage Input "Input" <br>
+\subpage Audio "Audio" <br>
+\subpage Physics "Physics" <br>
+\subpage Navigation "Navigation" <br>
+\subpage IK "Inverse Kinematics" <br>
+\subpage UI "User interface" <br>
+\subpage Urho2D_and_Physics2D "Urho2D and Physics2D" <br>
+\subpage Serialization "Serialization" <br>
+\subpage Network "Networking" <br>
+\subpage Multithreading "Multithreading" <br>
+\subpage AttributeAnimation "Attribute animation" <br>
+\subpage SplinePath "Spline path" <br>
+\subpage CSharp "C# Scripting" <br>
+\subpage Tools "Tools" <br>
+\subpage Unicode "Unicode support" <br>
+\subpage FileFormats "Custom file formats" <br>
+\subpage CodingConventions "Coding conventions" <br>
+\subpage ContributionChecklist "Contribution checklist" <br>
 
-For Urho3D related links and projects, see \ref ExternalLinks "External links".
+For Urho3D related links and projects, see \subpage ExternalLinks "External links".
 
-For credits, copyright and licensing information, see \ref Credits & \ref License.
+For credits, copyright and licensing information, see \subpage Credits & \subpage License.
 
-For release history and major changes, see \ref History.
+For release history and major changes, see \subpage History.
 
-Also see \ref PortingNotes for necessary changes when moving to a newer Urho3D version.
+Also see \subpage PortingNotes for necessary changes when moving to a newer Urho3D version.
 
 \page Credits Credits
 
