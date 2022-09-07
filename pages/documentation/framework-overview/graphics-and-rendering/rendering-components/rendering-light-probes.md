@@ -1,4 +1,5 @@
-# Light Probe Group Component
+Light Probe Group Component {#rendering-light-probes}
+========================================
 
 `LightProbeGroup` defines a group of light probes which are used to calculate volumetric global illumination.
 

@@ -1,4 +1,5 @@
-# Model Resource
+Model Resource {#rendering-models}
+========================================
 
 `Model` contains vertex and index buffers used to render static geometries.
 `Model` also contain `Skeleton` for skeletal animation and some extra metadata.

@@ -1,4 +1,5 @@
-# Standard Network Objects
+Standard Network Objects {#standard-network-objects}
+========================================
 
 ## StaticNetworkObject
 

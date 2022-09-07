@@ -1,3 +1,0 @@
-### Bullet is not exported from shared library builds
-
-Bullet project only supports building as static library. It also extensively uses templates in their public-facing API. This makes it rather difficult to maintain patches for out-of-tree DLL export interface. For this reason Bullet is built as a static library and exported to a SDK even in shared library engine builds. If user needs to interface with bullet directly while using such build - they have to accept a cost of code duplication. User application will have to link to Bullet's static library and code of physics engine will be included in user's executable as well as in engine shared library. This will not be fixed until Bullet project starts supporting shared library builds.

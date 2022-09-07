@@ -1,5 +1,5 @@
 C# Support {#outdated-csharp-support}
-==========
+========================================
 
 ⚠️ C# support is experimental ⚠️ It may not work correctly, fail or crash in spectacular ways. Managed APIs will likely change in the future.
 

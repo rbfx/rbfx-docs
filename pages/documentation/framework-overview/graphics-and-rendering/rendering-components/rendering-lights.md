@@ -1,4 +1,5 @@
-# Light Component
+Light Component {#rendering-lights}
+========================================
 
 `Light` component applies direct lighting to geometries in the `Scene`.
 There are three types of light sources:

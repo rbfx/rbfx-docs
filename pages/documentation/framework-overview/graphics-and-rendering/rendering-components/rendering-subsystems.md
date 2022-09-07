@@ -1,4 +1,5 @@
-# Scene Subsystems
+Rendering Subsystems {#rendering-subsystems}
+========================================
 
 Scene subsystems are root level `Scene` components, i.e. assigned to the `Scene` itself.
 Subsystems should have at most one instance per `Scene`.

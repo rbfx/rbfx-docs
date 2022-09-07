@@ -1,4 +1,7 @@
-# Viewport Management
+Rendering Pipeline {#rendering-pipeline}
+========================================
+
+## Viewport Management
 
 `Viewport` is window or texture rectangle which is destination point for rendering operations.
 Main window and each render target may have unlimited amount of viewports, but they almost always need at least one.
@@ -9,7 +12,7 @@ Unless `RenderPipeline` clears destination region of the viewport, the initial c
 
 `Viewport` ignores `RenderPath` if `RenderPipeline` is used.
 
-# Render Pipeline Basics
+## Render Pipeline Basics
 
 `RenderPipeline` is the root level scene component that manages scene rendering and keeps current rendering settings.
 `RenderPipeline` spawns one `RenderPipelineView` per viewport rendering this scene.
@@ -20,9 +23,9 @@ TODO: Support of multiple `RenderPipeline` objects in one scene may be implement
 `RenderPipeline` or derived component should be present in the root node of the `Scene` in order to render scene.
 If no such component exists and legacy render is disabled, new instance of `RenderPipeline` component is created automatically.
 
-# Default Render Pipeline
+## Default Rendering Pipeline
 
-## Color space
+### Color space
 
 Rendering in **Gamma** color space (i.e. **without** gamma correction) results in incorrect lighting and light blending.
 However, rendering in Gamma color space is supported on all platforms.
@@ -35,7 +38,7 @@ Gamma vs Linear color space:
 
 ![](images/Gamma-vs-Linear-Color-Space.png)
 
-## Color range
+### Color range
 
 Colors in **Low Dynamic Range** aka **LDR** are in range `[0, 1]` with fixed precision of `1/256`. **LDR** is supported on all platforms. Also, it's easier to work with: there's no need to worry about converting final image to displayable color (no tone mapping needed).
 
@@ -43,7 +46,7 @@ Colors in **High Dynamic Range** aka **HDR** are in range `[0, 65504]` with rela
 
 TODO: Improve support of HDR assets.
 
-## Lighting Modes
+### Lighting Modes
 
 The following aspects of lighting are always applied when geometry is rendered first time:
 
@@ -56,7 +59,7 @@ Opaque geometry lit with per-pixel lights are rendered differently for **Forward
 
 Translucent geometry is always lit using **Forward** lighting.
 
-### Forward Lighting
+#### Forward Lighting
 
 Lighting partially is processed on CPU before rendering:
 
@@ -75,7 +78,7 @@ All per-pixel lights affecting geometry are rendered in each own separate pass (
 
 **Exception:** at most one per-pixel directional light with positive intensity is applied in base pass as well (`litbase` pass).
 
-### Deferred Lighting
+#### Deferred Lighting
 
 Geometry is rendered to geometry buffer textures just once (deferred pass).
 All lights are per-pixel and applied in post-processing afterwards.
@@ -94,7 +97,7 @@ Geometry buffer layout:
 
 World-space position is reconstructed from depth buffer.
 
-## Shadows
+### Shadows
 
 Shadows are rendering using shadow maps.
 Shadow maps are packed into atlases of specified size.
@@ -104,7 +107,7 @@ Directional lights support up to 4 cascades (only 1 on mobile platforms).
 
 Shadows maps may be filtered using Percentage Closer Filtering (`1x1`, `2x2`, `3x3` or `5x5` filter kernels) or Variance Shadow Mapping.
 
-## HDR to LDR conversion
+### HDR to LDR conversion
 
 When all HDR-related effects are applied, it's necessary to convert HDR texture back to LDR.
 
@@ -116,16 +119,16 @@ If auto-exposure is enabled, `RenderPipeline` will try to guess best exposure an
 
 **Gamma Correction** is applied automatically in the end.
 
-## Fallback
+### Fallback
 
 If current platform doesn't support current settings, `RenderPipeline` will automatically reduce settings to closes supported configuration.
 It may cause visual glitches or disabled effects.
 
 This behavior cannot be disabled. Check for minimal system requirements manually.
 
-## Properties
+### Properties
 
-### Common properties
+#### Common properties
 
 |Property|Description|
 |-|-|
@@ -160,7 +163,7 @@ This behavior cannot be disabled. Check for minimal system requirements manually
 |> Deferred PBR|**Deferred** lighting. Non-PBR materials may be rendered incorrectly.|
 |**Draw&nbsp;Debug&nbsp;Geometry**|Whether to draw geometry from `DebugRenderer`.|
 
-### Shadow properties
+#### Shadow properties
 
 |Property|Description|
 |-|-|
@@ -189,7 +192,7 @@ This behavior cannot be disabled. Check for minimal system requirements manually
 |**Post Process Antialiasing**|Post-processing antialiasing algorithm used to smooth edges.|
 |**Post Process Grey Scale**|Convert output color to shades of gray.|
 
-### Examples
+#### Examples
 
 Disabled vs enabled normal mapping controlled by **Material Quality**:
 

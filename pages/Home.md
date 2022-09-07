@@ -1,90 +1,70 @@
-Documentation of Urho3D Rebel Fork {#mainpage}
-==================================
+Home {#mainpage}
+========================================
 
-**Note**: Legacy and sometimes outdated documentation inherited from original Urho3D project is available \subpage LegacyDocumentation "here"
+**Rebel Fork Framework** aka **rbfx** is an experimental fork of [Urho3D](https://github.com/urho3d/Urho3D) game engine distributed under [MIT license](https://github.com/rbfx/rbfx/blob/master/LICENSE).
 
-**Disclaimer**: this wiki doesn't attempt to describe every single feature, class or function in the framework.
-It merely offers high-level overview of subsystems and features.
-It would be too expensive to maintain otherwise.
-Use this wiki together with reading framework headers in `Source/Urho3D/*` and relevant comments.
+**Rebel Fork Framework** is:
 
-### Outdated
+* **Free and Open Source Software**, and it will stay this way;
+* Suitable for 3D games and applications;
+* Moderately lightweight and modular;
+* Supported for Windows, Linux, MacOS, Android, iOS, Web and XBox (via UWP);
+* Just a C++ library with a couple of tools;
+* Also, there are experimental, optional C# bindings.
 
-* \subpage outdated-first-application
-* \subpage outdated-using-as-sdk
-* \subpage outdated-profiling
-* \subpage outdated-plugins
-* \subpage outdated-csharp-support
+**Note**: The Framework is not yet released and is undergoing active development.
+Backward compatibility is (mostly) preserved on resource level, but C++ API is prone to changes.
 
-### Project Structure
 
-* `Source/Tools/Editor/`: WIP Editor, somewhat useful;
-* `Source/Samples/`: Code-friendly samples showing how to use different features;
-* `Source/Tests/`: Unit tests checked automatically by CI;
-* `Source/Urho3D/`: Main code of the framework:
-    * `Audio`: Audio playback utilities and scene components;
-    * `Container`: Generic containers and container-related code;
-    * `Core`: Generic utilities used by all other modules;
-    * `CSharp`: C# bindings;
-    * `Engine`: Connects all modules together and manages the framework as a whole;
-    * `Glow`: Lightmap and light probe baking tool;
-    * `Graphics`: Contains both low-level GAPI interop layer and high-level rendering components;
-    * `IK`: Inverse kinematics components;
-    * `Input`: User input handling (keyboard, mouse, touch, joystick);
-    * `IO`: Low-level and high-level serialization and file system management utilities (and logger);
-    * `Math`: Mathematical abstractions and geometry objects;
-    * `Navigation`: Navigation mesh generation and pathfinding;
-    * `Network`: Low-level networking utilities;
-    * `Physics`: Physics simulation and related scene components;
-    * `RenderPipeline`: Transforms resources and scene components to draw commands;
-    * `Replica`: Utilities for Scene replication and synchronization between server and clients;
-    * `Resource`: Resource cache and generic resource types;
-    * `RmlUI`: [RmlUI](https://github.com/mikke89/RmlUi) integration;
-    * `Scene`: Scene graph and some generic scene components;
-    * `Script`: Script management;
-    * `SystemUI`: [Dear ImGUI](https://github.com/ocornut/imgui) integration;
-    * `UI`: Legacy Urho UI. **Not maintained.**
-    * `Urho2D`: 2D rendering and physics. **Not maintained.**
+### Reasons to use
 
-### Asset Workflow
+There are multiple game engines out there, both proprietary and free.
+Here are some reasons why you may want to try this one:
 
-TODO: Write me
+* It's "code first" framework with full control over code execution,
+    unlike Unity-like game engines with "IDE first" approach and script sandboxes.
 
-### Scene and Animation
+* It's portable and relatively lightweight framework that can be used like any other third-party dependency,
+    unlike huge mainstream game engines.
 
-* Scene Overview
-* Nodes and Components
-* [Scene Animation](Scene-Animation.md)
+* It's a fork of the mature and stable Urho3D engine (which was released in 2011),
+    so it's more feature-rich and well tested than many of the new non-mainstream game engines.
 
-### Graphics and Rendering
+* If you already use Urho3D, you may want to try this framework if you like Urho3D
+    but you are not fully satisfied with current Urho3D feature set.
 
-* [Low-level rendering API](Low-level-Rendering-API.md)
-* [Scene rendering pipeline](Scene-Rendering-Pipeline.md)
-* Scene Components:
-    * [Subsystems](Scene-Rendering-Subsystems.md)
-    * [Zones](Rendering-Zones.md)
-    * [Lights](Rendering-Lights.md)
-    * [Geometries](Rendering-Geometries.md)
-    * [Light Probes](Rendering-Light-Probes.md)
-    * [Reflection Probes](Rendering-Reflection-Probes.md)
-* Resources:
-    * [Models](Model-Resources.md)
-    * [Materials](Material-Resources.md)
-    * [Textures](Texture-Resources.md)
-    * [Techniques](Rendering-Techniques.md)
-    * [Shaders](Rendering-Shaders.md)
 
-### Multiplayer and Networking
+### Reasons NOT to use
 
-* [Low-level transport](Low-level-Transport.md)
-* High-level Replication:
-    * [Replication Manager](Replication-Manager.md)
-    * [Network Objects](Network-Objects.md)
-        * [Standard Network Objects](Standard-Network-Objects.md)
-        * [Standard Network Behaviors](Standard-Network-Behaviors.md)
+**Don't** use the Framework if:
 
-### UI Overview
+* You are not ready to write code when you need some feature.
+    Just use [Unity](https://unity.com/) or any other mainstream engine with user store and ready-to-use assets.
 
-* `Urho3D/UI/` is legacy built-in Urho3D UI system. It is the most flexible UI solution, but it requires the biggest amount of hand-holding as well. You can do everything, but you will have to write a lot of code to make it work smoothly. Not actively maintained, bug fixes and minor tweaks only.
-* `Urho3D/RmlUI/` is the integration of RmlUI library. Work in progress, but it is already useful. HTML/CSS like UI which requires certain knowledge to setup, but it supports data bindings and UI generation natively. DPI-aware. [Check out RmlUI documentation](https://mikke89.github.io/RmlUiDoc/).
-* `Urho3D/SystemUI/` is the integration of Dear ImGUI library. Unlike other two UIs, it supports multiple native windows. It's not recommended to use it for actual game. Use this UI for Editor add-ons or other tools. [Check out Dear ImGUI documentation](https://github.com/ocornut/imgui/wiki).
+* You want to have cutting-edge graphics or technology for AAA game.
+    Just use [Unreal Engine](https://www.unrealengine.com/) or any other graphics-oriented game engine.
+
+* You are happy with Urho3D.
+    This framework is not intended to be a replacement of Urho3D.
+    Just keep using [Urho3D](https://github.com/urho3d/Urho3D).
+
+* You want Urho3D but for C#.
+    While this framework *does* have C# bindings, C# is not a first-class citizen here.
+    Try using [Urho.Net](https://github.com/Urho-Net) or any other C#-friendly engine.
+
+### Documentation
+
+\subpage documentation "Main documentation page"
+
+\subpage LegacyDocumentation "Legacy documentation inherited from original Urho3D project"
+
+**Disclaimer**: It's hard to maintain complete and up-to-date documentation.
+Check main documentation page for the high-level feature overview and tutorials.
+If you need more details, check the source code and the examples.
+You may also check legacy Urho3D documentation for useful bits of information.
+
+**Pull Requests with documentation improvements are welcome.**
+
+### Screenshots
+
+![](images/showcase/screenshot-00.png)

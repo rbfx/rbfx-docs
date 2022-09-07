@@ -1,4 +1,5 @@
-# Replication Manager
+Replication Manager {#replication-manager}
+========================================
 
 ## Overview
 

@@ -1,4 +1,5 @@
-# Drawable Geometry Components
+Drawable Geometry Components {#rendering-geometries}
+========================================
 
 "Geometries" is a general term for all components inherited from `Drawable` with `DRAWABLE_GEOMETRY` flag.
 "Geometries" also include components that don't inherit `Drawable` directly and instead use temporary `Drawable`-s internally (like `Terrain` that internally spawns `TerrainPatch`-es)

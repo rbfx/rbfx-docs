@@ -1,4 +1,5 @@
-# Technique Resource
+Technique Resource {#rendering-techniques}
+========================================
 
 `Technique` defines exact sequence of steps used to render geometry to scene.
 

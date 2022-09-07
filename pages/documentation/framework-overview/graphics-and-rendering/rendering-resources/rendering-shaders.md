@@ -1,4 +1,5 @@
-# Shaders
+Shaders {#rendering-shaders}
+========================================
 
 If shader name starts with `v2/`, runtime attempts to find the shader in `Shaders/GLSL/(Shader Name)`.
 If found, runtime treats it as universal shader.

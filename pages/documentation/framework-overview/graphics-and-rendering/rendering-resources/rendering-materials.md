@@ -1,4 +1,5 @@
-# Material Resource
+Material Resource {#rendering-materials}
+========================================
 
 `Material` defines properties of geometry surface and how exactly it is rendered by the pipeline.
 

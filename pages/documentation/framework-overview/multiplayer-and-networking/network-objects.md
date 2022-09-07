@@ -1,4 +1,5 @@
-# Network Objects
+Network Objects {#network-objects}
+========================================
 
 ## Overview
 

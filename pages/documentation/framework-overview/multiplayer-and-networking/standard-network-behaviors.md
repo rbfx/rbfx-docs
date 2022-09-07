@@ -1,4 +1,5 @@
-# Standard Network Behaviors
+Standard Network Behaviors {#standard-network-behaviors}
+========================================
 
 ## ReplicatedTransform
 

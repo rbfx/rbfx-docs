@@ -1,4 +1,5 @@
-# Zone Component
+Zone Component {#rendering-zones}
+========================================
 
 `Zone` is special kind of `Drawable` that defines global rendering properties for OBB (oriented bounding box) region of the `Scene`.
 

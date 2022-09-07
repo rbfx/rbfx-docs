@@ -1,4 +1,5 @@
-# Reflection Probe Component
+Reflection Probe Component {#rendering-reflection-probes}
+========================================
 
 `ReflectionProbe` defines a reflection cubemap that will be applied to `Drawable`s intersecting with the probe. Reflection from `ReflectionProbe` takes precedence over reflection from `Zone`.
 

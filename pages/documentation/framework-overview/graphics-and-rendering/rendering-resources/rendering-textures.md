@@ -1,4 +1,5 @@
-# Texture Resource
+Texture Resource {#rendering-textures}
+========================================
 
 There are several types of texture resources:
 

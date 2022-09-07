@@ -33,6 +33,8 @@ macro (enable_help IDE)
     endif ()
 endmacro ()
 
+option (URHO3D_IDE_SPECIFIC_DOCS "Enable IDE-specific integration with Urho3D documentation" OFF)
+
 # There could be bug in CMake find_package() command, it currently does not honor NO_CMAKE_FIND_ROOT_PATH option for a non-rooted search as per CMake's documentation
 # As a workaround, we unset CMAKE_FIND_ROOT_PATH (even when we are cross-compiling) but in this scope ONLY in order to always do a non-rooted search for Doxygen package
 unset (CMAKE_FIND_ROOT_PATH)
@@ -59,9 +61,11 @@ if (DOXYGEN_FOUND)
                 set (EXCLUDE_GRAPHICS_API2 Direct3D11)
             endif ()
         endif ()
-        foreach (IDE XCODE MSVC Eclipse CodeBlocks)
-            enable_help (${IDE})
-        endforeach ()
+        if (URHO3D_IDE_SPECIFIC_DOCS)
+            foreach (IDE XCODE MSVC Eclipse CodeBlocks)
+                enable_help (${IDE})
+            endforeach ()
+        endif ()
         if (MSVC_HELP)
             find_package (HTMLHelp)
             # It is not an error when HTML help compiler is not found, instead just switching off the Doxygen's HHC option
