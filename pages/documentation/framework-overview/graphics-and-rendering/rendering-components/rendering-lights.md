@@ -47,7 +47,7 @@ Shadows are relatively expensive.
 |> Mixed|`Light` contributes to indirect lighting during light baking. Direct lighting and shadows are still calculated in runtime.|
 |> Baked|`Light` is ignored during rendering. All lighting is baked into light maps and light probes.|
 |**View Mask**|Light is ignored if its **View Mask** doesn't match **View Mask** of the `Camera`.|
-|**Light Mask**|See [Zones](Rendering-Zones.md)|
+|**Light Mask**|See \ref rendering-zones|
 |**Can&nbsp;Be&nbsp;Occluded**|Whether to disable this light if it's invisible. You may want to disable that only if you have lit non-occluded geometries. Which is probably bad idea.|
 
 ## Lighting Properties

@@ -8,7 +8,7 @@ These components define actual geometry to be rendered.
 
 ## Common Properties
 
-For **Light Mask**, **Shadow Mask**, and **Zone Mask** descriptions, see [Zones](Rendering-Zones.md).
+For **Light Mask**, **Shadow Mask**, and **Zone Mask** descriptions, see \ref rendering-zones.
 
 |Property|Description|
 |-|-|
@@ -24,7 +24,7 @@ For **Light Mask**, **Shadow Mask**, and **Zone Mask** descriptions, see [Zones]
 |> None|No additional lighting is applied.|
 |> Use LightMap|Geometry receives lighting from baked light maps.|
 |>&nbsp;Blend&nbsp;Light&nbsp;Probes|Geometry receives lighting from light probes cached in `GlobalIllumination`.|
-|**Reflection Mode**|Method used to apply cubemap reflection to the geometry. See [Reflection Probes](Rendering-Reflection-Probes.md) for more details.|
+|**Reflection Mode**|Method used to apply cubemap reflection to the geometry. See \ref rendering-reflection-probes for more details.|
 |> Zone|Geometry receives reflection from best suited `Zone`. `ReflectionProbe`s are ignored.|
 |> Nearest Probe|Geometry receives reflection from best suited `ReflectionProbe`, or `Zone` if there is no probes.|
 |> Blend Probes|Geometry receives reflection from two best suited `ReflectionProbe`s, or `Zone` if there is no probes.|

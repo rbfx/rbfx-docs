@@ -5,7 +5,7 @@ Zone Component {#rendering-zones}
 
 Some properties affect individual objects within the zone, other properties affect `Camera` itself when it enters the zone.
 
-Try to use as few `Zone`s as possible, preferably just one global `Zone`. Keep in mind that there's no property blending between different `Zone`s. Consider using more fine-tuned tools like [Light Probes](Rendering-Light-Probes.md) or [Reflection Probes](Rendering-Reflection-Probes.md) whenever possible.
+Try to use as few `Zone`s as possible, preferably just one global `Zone`. Keep in mind that there's no property blending between different `Zone`s. Consider using more fine-tuned tools like \ref rendering-light-probes or \ref rendering-reflection-probes whenever possible.
 
 ## Basic Properties
 

@@ -15,7 +15,7 @@ For compatibility reasons it is created automatically unless legacy renderer is 
 
 Any class derived from `RenderPipeline` can be used instead of `RenderPipeline` itself.
 
-See [Scene rendering pipeline](Scene-Rendering-Pipeline.md) for details.
+See \rendering-pipeline for details.
 
 ## Octree
 

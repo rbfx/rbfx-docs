@@ -36,7 +36,7 @@ Choose color space wisely: changing it results in substantial difference in resu
 
 Gamma vs Linear color space:
 
-![](images/Gamma-vs-Linear-Color-Space.png)
+![](images/documentation/gamma-vs-linear-color-space.png)
 
 ### Color range
 
@@ -196,16 +196,16 @@ This behavior cannot be disabled. Check for minimal system requirements manually
 
 Disabled vs enabled normal mapping controlled by **Material Quality**:
 
-![](images/Low-vs-Medium-Material-Quality.png)
+![](images/documentation/low-vs-medium-material-quality.png)
 
 Simple vs Antialiased **Specular Quality**:
 
-![](images/Simple-vs-Antialiased-Specular.png)
+![](images/documentation/simple-vs-antialiased-specular.png)
 
 Vertex vs Pixel **Reflection Quality**:
 
-![](images/Vertex-vs-Pixel-Reflection.png)
+![](images/documentation/vertex-vs-pixel-reflection.png)
 
 Flat vs Directional **Ambient Mode**:
 
-![](images/Flat-vs-Directional-Ambient.png)
+![](images/documentation/flat-vs-directional-ambient.png)
