@@ -15,14 +15,6 @@ Home {#mainpage}
 **Note**: The Framework is not yet released and is undergoing active development.
 Backward compatibility is (mostly) preserved on resource level, but C++ API is prone to changes.
 
-[Main Repository on GitHub](https://github.com/rbfx/rbfx)
-
-[Docs Repository on GitHub](https://github.com/rbfx/rbfx-docs)
-
-[Documentation](https://rbfx.github.io/)
-
-[Discord Server](https://discord.gg/XKs73yf)
-
 
 ### Reasons to use
 
@@ -72,6 +64,16 @@ If you need more details, check the source code and the examples.
 You may also check legacy Urho3D documentation for useful bits of information.
 
 **Pull Requests with documentation improvements are welcome.**
+
+
+### Links
+
+* [Project Repository on GitHub](https://github.com/rbfx/rbfx)
+
+* [Documentation Repository](https://github.com/rbfx/rbfx-docs) for documentation issues and pull requests
+
+* [Discord Server](https://discord.gg/XKs73yf)
+
 
 ### Screenshots
 
