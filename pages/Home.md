@@ -15,6 +15,14 @@ Home {#mainpage}
 **Note**: The Framework is not yet released and is undergoing active development.
 Backward compatibility is (mostly) preserved on resource level, but C++ API is prone to changes.
 
+[Main Repository on GitHub](https://github.com/rbfx/rbfx)
+
+[Docs Repository on GitHub](https://github.com/rbfx/rbfx-docs)
+
+[Documentation](https://rbfx.github.io/)
+
+[Discord Server](https://discord.gg/XKs73yf)
+
 
 ### Reasons to use
 
