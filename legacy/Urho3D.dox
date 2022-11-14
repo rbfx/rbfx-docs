@@ -4,9 +4,10 @@ namespace Urho3D
 /**
 \page LegacyDocumentation Legacy Documentation
 
-rbfx (https://rbfx.github.io/) is a free lightweight, cross-platform 2D and 3D game engine implemented in C++ and released under the MIT license. It utilizes either Direct3D9 or OpenGL for rendering (%Shader %Model 2 or OpenGL 2.0 required as minimum.)
+**This page is inherited from original Urho3D documentation and is kept for historical reasons.**
 
-rbfx is a fork of Urho3D (https://urho3d.github.io) and may be referred to as "Urho3D" through the project.
+While it still may contain useful bits of information, it is not guaranteed to be up-to-date.
+Some of the information may be incorrect or misleading.
 
 For getting started, see:
 

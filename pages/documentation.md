@@ -32,10 +32,8 @@ Documentation {#documentation}
 * Miscellaneous:
     * \subpage project-goals
 
-**TODO: Update these pages**:
+**TODO: These pages are outdated**:
 
-* \subpage outdated-first-application
 * \subpage outdated-using-as-sdk
 * \subpage outdated-profiling
-* \subpage outdated-plugins
 * \subpage outdated-csharp-support

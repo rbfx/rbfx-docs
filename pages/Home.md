@@ -52,6 +52,7 @@ Here are some reasons why you may want to try this one:
     While this framework *does* have C# bindings, C# is not a first-class citizen here.
     Try using [Urho.Net](https://github.com/Urho-Net) or any other C#-friendly engine.
 
+
 ### Documentation
 
 \subpage documentation "Main documentation page"
@@ -64,6 +65,18 @@ If you need more details, check the source code and the examples.
 You may also check legacy Urho3D documentation for useful bits of information.
 
 **Pull Requests with documentation improvements are welcome.**
+
+
+### Using the Framework
+
+It is recommended to check out [Sample Project on GitHub](https://github.com/rbfx/sample-project).
+
+This project demonstrates full pipeline: from code and assets to build and publishing.
+
+This project is automatically published to [itch.io](https://eugeneko.itch.io/sample-project).
+
+If you want to build the project or the Framework for your platform,
+it's recommended to check out how GitHub Actions are configured.
 
 
 ### Links
