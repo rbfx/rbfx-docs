@@ -34,6 +34,8 @@ Documentation {#documentation}
 
 **TODO: These pages are outdated**:
 
+* \subpage outdated-feature-overview
+* \subpage outdated-third-party
 * \subpage outdated-using-as-sdk
 * \subpage outdated-profiling
 * \subpage outdated-csharp-support
