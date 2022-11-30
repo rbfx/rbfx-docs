@@ -3,9 +3,7 @@ name: Documentation
 on:
   push:
   pull_request:
-  repository_dispatch:
-    types:
-      - build-docs
+  workflow_dispatch:
 
 env:
   URHO3D_DOCS: ON
