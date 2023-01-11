@@ -61,6 +61,7 @@ jobs:
           external_repository: rbfx/rbfx.github.io
           publish_dir: html
           publish_branch: master
+          force_orphan: true
 
       - uses: actions/upload-artifact@v2
         with:

@@ -93,6 +93,7 @@ if (DOXYGEN_FOUND)
         ${CMAKE_CURRENT_SOURCE_DIR}/legacy/*.dox)
     add_custom_command (OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/html/index.html
         COMMAND ${DOXYGEN_EXECUTABLE} generated/Doxyfile ${REDIRECT_STDOUT}
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/extra/ ${CMAKE_CURRENT_BINARY_DIR}/html/ # Copy extra files directly to root dir of generated output
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/generated/Doxyfile ${DOX_FILES}
         COMMENT "Generating documentation with Doxygen")
     add_custom_target (doc ${ALL}
