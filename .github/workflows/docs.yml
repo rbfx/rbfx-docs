@@ -59,10 +59,10 @@ jobs:
         with:
           personal_token: ${{ secrets.RBFX_DOCS_DEPLOY_TOKEN }}
           external_repository: rbfx/rbfx.github.io
+          destination_dir: docs
           cname: rebelfork.io
           publish_dir: html
           publish_branch: master
-          force_orphan: true
 
       - uses: actions/upload-artifact@v2
         with:
