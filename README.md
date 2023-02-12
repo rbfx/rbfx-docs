@@ -10,4 +10,4 @@
 
 1. Clone or download both `rbfx` and `rbfx-docs` as sibling folders.
 
-1. Build `rbfx-docs` like C++ CMake project with any generator.
+1. Build `doc` target of `rbfx-docs` like C++ CMake project with any generator.

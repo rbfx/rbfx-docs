@@ -1,5 +1,5 @@
-Rebel Fork Qick Start for C++ developers
-========================================
+Qick Start for C++ developers
+=============================
 
 ## Create a project from template
 
@@ -10,7 +10,8 @@ You can create a new repository based on a template repository on GitHub in the 
 * Go to the template repository's page on GitHub. In this case, the template repository is https://github.com/rbfx/sample-project.
 
 * Click the "Use this template" button on the repository's page.
-![Img](/images/github/use-this-template.jpg)
+
+![Github Use this template button](/images/github/use-this-template.jpg)
 
 * On the next page, specify the name for your new repository, a description (optional), and the settings for your repository.
 
@@ -37,7 +38,8 @@ To get the clone URL of a GitHub repository, follow these steps:
 * Click the "Code" button, and a dropdown will appear with the clone URL for the repository.
 
 * Copy the URL by clicking the "Copy to clipboard" button next to the URL, or by manually selecting and copying the URL.
-![Img](/images/github/code-clone.jpg)
+
+![GitHub Clone menu](/images/github/code-clone.jpg)
 
 > **Important**: Sample project references to the rbfx engine code as a submodule. "Download ZIP" won't work for you.
 
@@ -77,29 +79,36 @@ Open the "Download" section and click on the latest release installer, for examp
 When you run the application it will settings window. You can set it up later, for now you can just click "On" to open the main window.
 
 There are two options to clone repository:
-![Img](/images/github/git-ext-clone.jpg)
+
+![GitExtensions clone options](/images/github/git-ext-clone.jpg)
 
 ### Clone repository
 
 Let's take a look into generic "Clone repository" first.
 
-![Img](/images/github/git-ext-clone-repository.jpg)
+![GitExtensions clone repository](/images/github/git-ext-clone-repository.jpg)
+
 Fill in where you want to clone the game repository. "Initialize all submodules" checkbox allows you to fetch the engine source code along with the game source code.
 
 When clonned you should get an overview on your repository:
-![Img](/images/github/git-ext-repository.jpg)
+
+![GitExtensions repository view](/images/github/git-ext-repository.jpg)
 
 ### Clone GitHub repository
 
 First you need to generate a GitHub token following one of the links on a setup page. The token gives the Git Extension application access to your GitHub account.
-![Img](/images/github/git-ext-github-token.jpg)
+
+![GitExtensions GitHub plugin menu](/images/github/git-ext-github-token.jpg)
 
 Then you should be able to see list of your repositories, including the game repository you created from the template.
-![Img](/images/github/git-ext-clone-github.jpg)
+
+![GitExtensions GitHub Clone window](/images/github/git-ext-clone-github.jpg)
+
 Fill in required information and click "Clone" button.
 
 You are not done yet. The previous step only clonned the game source code but you still need the engine submodule. You need to find the rbfx submodule and click "Update" in the context menu.
-![Img](/images/github/git-ext-submodule-update.jpg)
+
+![GitExtensions How to update submodule](/images/github/git-ext-submodule-update.jpg)
 
 Now you are ready configure and run the game.
 

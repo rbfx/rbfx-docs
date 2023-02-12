@@ -19,8 +19,8 @@ Backward compatibility is (mostly) preserved on resource level, but C++ API is p
 
 Currently there is no scripting languages available so you have to be either a C++ or C# developer to use the language.
 
-* [For C++ developers](documentation/cpp-quick-start)
-* [For C# developers](documentation/csharp-quick-start)
+* \subpage cpp-quick-start For C++ developers
+* \subpage csharp-quick-start For C# developers
 
 ### Reasons to use
 
