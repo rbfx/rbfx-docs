@@ -15,6 +15,12 @@ Home {#mainpage}
 **Note**: The Framework is not yet released and is undergoing active development.
 Backward compatibility is (mostly) preserved on resource level, but C++ API is prone to changes.
 
+### "Quick start" guides
+
+Currently there is no scripting languages available so you have to be either a C++ or C# developer to use the language.
+
+* [For C++ developers](documentation/cpp-quick-start)
+* [For C# developers](documentation/csharp-quick-start)
 
 ### Reasons to use
 
