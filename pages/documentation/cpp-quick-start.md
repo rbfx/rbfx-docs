@@ -7,17 +7,16 @@ A good starting point for a game would be a sample project.
 
 You can create a new repository based on a template repository on GitHub in the following way:
 
-* Go to the template repository's page on GitHub. In this case, the template repository is https://github.com/rbfx/sample-project.
+1. Go to the template repository's page on GitHub. In this case, the template repository is https://github.com/rbfx/sample-project.
 
-* Click the "Use this template" button on the repository's page.
-
+2. Click the "Use this template" button on the repository's page.
 ![Github Use this template button](/images/github/use-this-template.jpg)
 
-* On the next page, specify the name for your new repository, a description (optional), and the settings for your repository.
+3. On the next page, specify the name for your new repository, a description (optional), and the settings for your repository.
 
-* Choose whether to make the repository public or private.
+4. Choose whether to make the repository public or private.
 
-* Click the "Create repository from template" button to create the repository.
+5. Click the "Create repository from template" button to create the repository.
 
 Your new repository will be created with the same files and directories as the template repository, and you can start using it right away. Note that the new repository will not be connected to the template repository, and any changes made to the new repository will not affect the template repository.
 
@@ -27,17 +26,19 @@ Your new repository will be created with the same files and directories as the t
 
 You should have the repository from the previous section avaliable in your github account. If not - you can use https://github.com/rbfx/sample-project instead.
 
+"git clone" is a Git command that allows you to copy (or "clone") a Git repository from a remote source to your local machine. When you run the "git clone" command, Git downloads all the files, history, and metadata of the repository to your local machine, creates a new Git repository in the current directory, and sets up a remote repository (also known as a "remote") that points back to the original repository.
+
 To clone a git repository you need a git client. Here is a list of resources where you can get a command line git client: https://git-scm.com/downloads
 
 To get the clone URL of a GitHub repository, follow these steps:
 
-* Go to the GitHub repository you want to clone.
+1. Go to the GitHub repository you want to clone.
 
-* Look for the "Code" button on the repository's page, usually located in the top-right corner.
+2. Look for the "Code" button on the repository's page, usually located in the top-right corner.
 
-* Click the "Code" button, and a dropdown will appear with the clone URL for the repository.
+3. Click the "Code" button, and a dropdown will appear with the clone URL for the repository.
 
-* Copy the URL by clicking the "Copy to clipboard" button next to the URL, or by manually selecting and copying the URL.
+4. Copy the URL by clicking the "Copy to clipboard" button next to the URL, or by manually selecting and copying the URL.
 
 ![GitHub Clone menu](/images/github/code-clone.jpg)
 
