@@ -147,13 +147,17 @@ So, for a 64-bit Windows system, you should use the cmake configuration script f
 
 Make sure that cmake is available from the console when you run the script.
 
-When configuration is done you'll find a new folder in the repository. The name of the folder should start with "cmake-build-".
+When configuration is done you'll find a new folder in the repository. The name of the folder is "cmake-build-{architecture}-{system}".
 
-You can use selected build tools to compile the project or you can run
+ When using the Visual Studio generator, CMake will generate a Visual Studio solution file (.sln) and project files (.vcxproj) for each target in your CMake project. The .sln file is the top-level solution file for your project, and it contains one or more projects. Each .vcxproj file is a project file for a specific target in your project.
+
+When using the Ninja generator with CMake, CMake will generate build files that can be used by the Ninja build system. Specifically, CMake will generate a build.ninja file that describes the build rules and dependencies for your project, as well as any other files needed by the Ninja build system to build your project.
+
+ Once the project is configured, you can use the build system to build the project. This can be done using the cmake --build command. For example, to build the project using selected build system, you would run the following command:
 ```bash
 cmake --build .
 ```
-from command line in the "cmake-build-*" folder and it will execute selected build tool for you.
+This assumes that you are still in the "cmake-build-{architecture}-{system}" directory. The --build option tells CMake to build the project, and the . specifies the current directory as the location of the build files.
 
 ## Running the project
 
