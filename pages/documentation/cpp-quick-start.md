@@ -1,4 +1,4 @@
-Qick Start for C++ developers
+Quick Start for C++ developers
 =============================
 
 ## Create a project from template
@@ -134,6 +134,16 @@ sudo apt-get install cmake
 ```
 
 The easiest way to configure project is to run a [configuration script](https://github.com/rbfx/sample-project/tree/master/Script). Pick one that suits you.
+
+When picking a cmake configuration script file, you should consider the target CPU architecture and operating system (OS) that you are building for. The triplet name follows the pattern "configure-{architecture}-{system}-{build-system}".
+
+Here's an example of how to pick a cmake configuration script file for a 64-bit Windows system:
+1. Determine the target CPU architecture. For a 64-bit system, the architecture is x64.
+2. Determine the name of the operating system. For Windows, the name is "windows".
+3. Determine the name of the build system. For Windows the most popular and up to date build system would be Visual Studio 2022, the name is "vs2022".
+4. Combine the architecture and system name to form the file name. In this case, the name would be "configure-x64-windows-vs2022".
+
+So, for a 64-bit Windows system, you should use the cmake configuration script file "configure-x64-windows-vs2022.bat". You can use a similar process to pick a script name for other target CPU architectures and operating systems.
 
 Make sure that cmake is available from the console when you run the script.
 

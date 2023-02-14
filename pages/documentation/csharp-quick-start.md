@@ -1,4 +1,4 @@
-Qick Start for C# developers
+Quick Start for C# developers
 ============================
 
 ## From console
