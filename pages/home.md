@@ -88,7 +88,7 @@ and is deployed to [itch.io](https://eugeneko.itch.io/sample-project).
 
 Building the project is usually straighforward on Desktop platforms: standard CMake configure and build.
 On Mobile and Web platforms extra steps may be needed.
-If you cannot figure it out, check how our GitHub Actions are configured.
+For more information on how to build the project see \ref build or check out how GitHub Actions are configured.
 
 
 ### Links
