@@ -79,7 +79,9 @@ To build the project on Windows, follow these steps:
    cmake --build cmake-build-win32 --config Release
    ```
 
-   This command builds the project in Release mode.
+   This command builds the project in Release configuration.
+
+   Alternatively, you may open the Visual Studio project a generated  in `cmake-build-win32` directory.
 
 ## Building on Windows (UWP)
 
@@ -104,7 +106,9 @@ To build the project on Windows, targetting UWP platform, follow these steps:
    cmake --build cmake-build-uwp --config Release
    ```
 
-   This command builds the project in Release mode.
+   This command builds the project in Release configuration.
+
+   Alternatively, you may open the Visual Studio project a generated  in `cmake-build-uwp` directory.
 
 ## Building on Linux
 
@@ -119,7 +123,7 @@ To build the project on Linux, follow these steps:
          -DURHO3D_SAMPLES=ON
    ```
 
-   This command configures the build for Release mode.
+   This command configures the build for Release configuration.
 
 3. Run the following command to build the project:
 
@@ -143,7 +147,7 @@ To build the project on MacOS, follow these steps:
          -DURHO3D_SAMPLES=ON
    ```
 
-   This command configures the build for Release mode.
+   This command configures the build for Release configuration.
 
 3. Run the following command to build the project:
 
@@ -153,7 +157,7 @@ To build the project on MacOS, follow these steps:
 
    This command builds the project.
 
-   Alternatively, you may open the Xcode project a generated  in `cmake-build`` directory.
+   Alternatively, you may open the Xcode project a generated  in `cmake-build-macos` directory.
 
 ## Building on Android
 
@@ -190,7 +194,7 @@ To build the project on iOS, follow these steps:
 
    This command builds the project.
 
-   Alternatively, you may open the Xcode project a generated  in `cmake-build`` directory.
+   Alternatively, you may open the Xcode project a generated  in `cmake-build-ios` directory.
 
 ## Building for Web (Emscripten)
 
@@ -220,7 +224,7 @@ To build the project for Web using Emscripten, follow these steps:
          -DURHO3D_SAMPLES=ON
    ```
 
-   This command configures the build for Release mode and Emscripten.
+   This command configures the build for Release configuration.
 
 4. Run the following command to build the project:
 
