@@ -1,6 +1,7 @@
 Documentation {#documentation}
 ========================================
 
+* \subpage build
 * \subpage folder-structure
 * \subpage framework-overview
     * \ref asset-workflow
