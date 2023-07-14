@@ -50,6 +50,14 @@ If you use Matrix3x4 or Matrix4 but you only need to apply rotation and scale yo
     Vector3 rotated = mat * vec3.ToVector4(0.0f); // The result is {3, 2, -1}
 ```
 
+All rotations in the engine performed in a clockwise order. Here is what going to happen with a vector {x,y,z} if rotated around an axis at 90 degrees:
+
+```
+Axis X (Vector::RIGHT):   { x, y, z } => { x,-z, y }
+Axis Y (Vector::UP):      { x, y, z } => { z, y,-x }
+Axis Z (Vector::FORWARD): { x, y, z } => {-y, x, z }
+```
+
 ## Matrix operations
 
 In the engine, matrices are column-major (like in OpenGL) while in DirectX they are row-major.
@@ -69,6 +77,33 @@ In general, for a column-vector on the right (OpenGL convention), M1 * (M2 * (M3
     Vector3 tr = (translation * rotation) * vec3; //13, 22, 29
 ```
 
+### Node transform matrices
+
+To combine world transform matrices to make a matrix that would transform from one game object space into another object space, you can multiply the inverse of the world transform matrix of the second object
+by the world transform matrix of the first object. This will give you a matrix that will transform from one object space to another object space.
+
+Here is an example code:
+```cpp
+    Matrix3x4 transformA = nodeA->GetWorldTransform();
+    Matrix3x4 transformB = nodeB->GetWorldTransform();
+    Matrix3x4 transformAtoB = transformB.Inverse() * transformA;
+    const Vector3 positionInA{1, 2, 3};
+    const Vector3 positionInB = transformAtoB * positionInA;
+```
+The transformAtoB matrix will now transform from the nodeA object’s space to the nodeB object’s space.
+
+### Bone bind pose matrices
+
+The bind pose matrix is the matrix that represents the position and orientation of a joint in its default pose. It is used as a reference for skinning, which is the process of deforming a mesh based on the movement of joints in a skeleton.
+
+When an animation is played, each joint in the skeleton is transformed by its animation matrix. The bind pose matrix is then used to transform the vertices of the mesh into the space of the joint. This is done by multiplying each vertex by the inverse of the bind pose matrix for the joint it is associated with.
+
+```cpp
+    const Vector3 bindSpacePosition{1, 2, 3};
+    const Matrix3x4 offsetMatrix = animatedModel->GetSkeleton().GetBone(0u)->offsetMatrix_;
+    const Vector3 localSpacePosition = offsetMatrix * bindSpacePosition;
+```
+
 ## Quaternion operations
 
 Quaternion multiplication order is the same as with matrices. Here is an example to illustrate it:
@@ -85,7 +120,7 @@ Quaternion multiplication order is the same as with matrices. Here is an example
     Vector3 xy = (rotationX * rotationY) * vec3; //3,1,2
 ```
 
-To revert rotation take result of the Inverse() method:
+To reverse rotation take result of the Inverse() method:
 ```cpp
     // Make Vector3
     const Vector3 vec3{1, 2, 3};
