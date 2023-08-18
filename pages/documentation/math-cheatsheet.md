@@ -1,6 +1,80 @@
 Math Cheatsheet
 ==============================
 
+## Angles, radians and degrees
+
+Radians and degrees are two units of measurement for angles. A full circle is 360 degrees, while the same angle in radians is 2π. This means that 1 radian is equal to 180/π degrees, and 1 degree is equal to π/180 radians.
+
+To convert an angle from degrees to radians, you can use the following formula:
+```cpp
+radians = degrees * M_DEGTORAD;
+```
+
+To convert an angle from radians to degrees, you can use the following formula:
+```cpp
+degrees = radians * M_RADTODEG;
+```
+
+The Urho3D::Atan2 function is a two-argument arctangent function that calculates the angle between the positive x-axis and the ray from the origin to the point (x, y) in the Cartesian plane. The result is given in degrees and is confined to the range (-180, 180].
+
+The yaw angle is the angle between the positive x-axis and the projection of the direction vector onto the x-z plane. You can calculate the yaw angle from a direction vector using the Urho3D::Atan2 function as follows:
+```cpp
+    const float angle = Urho3D::Atan2(dir.z_, dir.x_);
+```
+
+Some Atan2 result values for reference:
+```
+Atan2( 0.0f,  0.0f) =>  0.0f
+Atan2( 0.0f,  1.0f) =>  0.0f
+Atan2( 1.0f,  1.0f) => 45.0f
+Atan2( 1.0f,  0.0f) => 90.0f
+Atan2( 1.0f, -1.0f) => 135.0f
+Atan2(-1.0f, -1.0f) => -135.0f
+Atan2(-1.0f,  1.0f) => -45.0f
+```
+
+Here is a C++ function that clamps an angle value in degrees between -180 and 180 degrees:
+
+```
+float ClampAngle(float angle)
+{
+    angle = Urho3D::Mod(angle, 360.0f);
+    if (angle > 180.0f)
+        return angle - 360.0f;
+    if (angle < -180.0f)
+        return angle + 360.0f;
+    return angle;
+}
+```
+
+This function takes an angle value in degrees as an input and returns the clamped angle value between -180 and 180 degrees. The Urho3D::Mod function is used to calculate the remainder of the division of the angle by 360, which brings the angle value within the range of -360 to 360 degrees. Then, if the angle is greater than 180 degrees, 360 is subtracted from it to bring it within the desired range. Similarly, if the angle is less than -180 degrees, 360 is added to it to bring it within the desired range.
+
+This clamping function is very useful when you add or subtract angles. It is not absolutely necessary but makes this easier to understand and also keeps value close to 0 for better precision.
+
+## Interpolation
+
+Linear Interpolation (Lerp) is a mathematical function that is used to find a point some fraction of the way along a line between two endpoints. In other words, it is used to find a value between two values that are known.
+
+```cpp
+    Vector3 vectorA{1, 0, 0};
+    Vector3 vectorB{0, 1, 0};
+    float t = 0.2f;
+
+    auto res1 = vectorA.Lerp(vectorB, t); // {0.8f, 0.2f, 0.0f}
+    auto res2 = Urho3D::Lerp(vectorA, vectorB, t); // {0.8f, 0.2f, 0.0f}
+```
+
+An easing function is a mathematical function that modifies the time value of an animation to create a more natural and smooth effect. It is used to change the rate of change of a parameter over time. Easing functions are mostly used in animations to change a component value in a defined period of time. You can move objects, change their colors, scales, rotations and anything you want simply using easing equations.
+
+For example, if you have an animation that moves an object from point A to point B in a straight line, it will look very robotic and unnatural. But if you use an easing function to modify the time value of the animation, you can create a more natural and smooth effect.
+
+There are many different types of easing functions, each with its own unique effect. Some common types include linear easing, quadratic easing, cubic easing, and elastic easing.
+
+Here is an example of interpolation with easing:
+```cpp
+    auto res1 = vectorA.Lerp(vectorB, Urho3D::BackInOut(t));
+```
+
 ## Vector operations
 
 To convert one vector to another use the .To\*Vector\* operators. Here are few examples:
