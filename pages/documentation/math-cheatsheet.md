@@ -19,7 +19,9 @@ The Urho3D::Atan2 function is a two-argument arctangent function that calculates
 
 The yaw angle is the angle between the positive x-axis and the projection of the direction vector onto the x-z plane. You can calculate the yaw angle from a direction vector using the Urho3D::Atan2 function as follows:
 ```cpp
-    const float angle = Urho3D::Atan2(dir.z_, dir.x_);
+    Quaternion rot(0, 70, 0);
+    auto dir = rot * Vector3::FORWARD;
+    float angle = Atan2(dir.x_, dir.z_); // 70.0f
 ```
 
 Some Atan2 result values for reference:
