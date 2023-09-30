@@ -9,4 +9,6 @@ Framework Overview {#framework-overview}
 
 \subpage scene-and-animation
 
+\subpage input
+
 \subpage ui-overview
