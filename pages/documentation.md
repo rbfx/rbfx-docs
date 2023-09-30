@@ -29,6 +29,7 @@ Documentation {#documentation}
         * \ref standard-network-behaviors
     * \ref scene-and-animation
         * \ref scene-animation
+    * \ref input
     * \ref ui-overview
 * Miscellaneous:
     * \subpage project-goals
