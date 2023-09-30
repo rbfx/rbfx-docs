@@ -36,9 +36,9 @@ The input events include:
 - E_INPUTEND : input handling ends.
 - E_SDLRAWINPUT : raw SDL event is sent for customized event processing.
 
-Here is a sample code for handling the E_MOUSEBUTTONUP event in Urho3D:
+Here is a sample code for handling the E_MOUSEBUTTONUP event in Rebel Framework:
 
-```c++
+```cpp
 void HandleMouseUp(StringHash eventType, VariantMap& eventData)
 {
     using namespace MouseButtonDown;
@@ -54,7 +54,7 @@ void HandleMouseUp(StringHash eventType, VariantMap& eventData)
 }
 ```
 
-```c++
+```cpp
 SubscribeToEvent(E_MOUSEBUTTONUP, &MyApplication::HandleMouseUp);
 ```
 
@@ -65,7 +65,7 @@ This code subscribes to the E_MOUSEBUTTONUP event and handles it in the HandleMo
 The InputMap class is responsible for mapping keyboard keys, gamepad buttons, or axis movement to logical actions in a game engine. The class provides an interface for defining and managing input mappings, which can be used to trigger specific actions in the game.
 
 The InputMap is serializable. You can define default map in game resources and override in a configuration folder. Because of that it is recommended to use the helper method to load the map:
-```c++
+```cpp
 /// Load input map from config file or resource.
 void LoadInputMap(const ea::string& name);
 ```
@@ -74,7 +74,7 @@ The method looks up map in configuration folder first and only if it is missing 
 If you have no intention to allow user to define key mappings you can fetch it from ResourceCache as any other resource.
 
 To map a keyboard key you can use MapKeyboardKey.
-```c++
+```cpp
 map->MapKeyboardKey("Forward", SCANCODE_W);
 ```
 Keyboard mapping is based on scancodes. Scancodes are unique codes assigned to each key on a keyboard. They are used to identify the physical key pressed, regardless of the keyboard layout or language. In games, scancodes are used to support international keyboard layouts by providing a consistent way to identify keys across different keyboards and languages.
@@ -82,13 +82,13 @@ Keyboard mapping is based on scancodes. Scancodes are unique codes assigned to e
 For example, if a game uses the "WASD" keys for movement, it can map the scancodes for those keys to the movement action in the game. This allows players to use any keyboard layout or language and still be able to move their character using the same physical keys. For example in France, the most commonly used keyboard layout is AZERTY. It is similar to the QWERTY layout used in English-speaking countries, but with a few differences. For example, the letters A and Q are swapped, as are the letters Z and W.
 
 To get value from the map use Evaluate method.
-```c++
+```cpp
 const float forward = map->Evaluate("Forward");
 ```
 This means that the map finds a matching mapping and reads its value directly from Input system. The value returned is between 0 and 1, where 0 means the key is not pressed and 1 means the key is pressed. Some input devices have analog input, which means you can get any value between 0 and 1.
 
 To map gamepad analog stick axis use MapJoystickAxis or MapControllerAxis method.
-```c++
+```cpp
 /// Map generic joystick axis to the action.
 void MapJoystickAxis(const ea::string& action, unsigned axis, float neutral, float pressed);
 
@@ -106,7 +106,7 @@ The method takes four parameters:
 The Evaluate method return value of the joystick axis is mapped to a range between neutral and pressed, where neutral represents the neutral position of the joystick and pressed represents the position of the joystick when it is fully pressed.
 
 For example, if you want to map the Y-axis of a gamepad to control the movement of a character in your game, you can use the following code:
-```c++
+```cpp
 map->MapControllerAxis("Forward", CONTROLLER_AXIS_LEFTY, 0.0f, -1.0f);
 ```
 
