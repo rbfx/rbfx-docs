@@ -15,9 +15,9 @@ To convert an angle from radians to degrees, you can use the following formula:
 degrees = radians * M_RADTODEG;
 ```
 
-The Urho3D::Atan2 function is a two-argument arctangent function that calculates the angle between the positive x-axis and the ray from the origin to the point (x, y) in the Cartesian plane. The result is given in degrees and is confined to the range (-180, 180].
+The \ref Atan2 function is a two-argument arctangent function that calculates the angle between the positive x-axis and the ray from the origin to the point (x, y) in the Cartesian plane. The result is given in degrees and is confined to the range (-180, 180].
 
-The yaw angle is the angle between the positive x-axis and the projection of the direction vector onto the x-z plane. You can calculate the yaw angle from a direction vector using the Urho3D::Atan2 function as follows:
+The yaw angle is the angle between the positive x-axis and the projection of the direction vector onto the x-z plane. You can calculate the yaw angle from a direction vector using the \ref Atan2 function as follows:
 ```cpp
     Quaternion rot(0, 70, 0);
     auto dir = rot * Vector3::FORWARD;

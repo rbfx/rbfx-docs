@@ -62,7 +62,7 @@ This code subscribes to the E_MOUSEBUTTONUP event and handles it in the HandleMo
 
 ## Input Map
 
-The InputMap class is responsible for mapping keyboard keys, gamepad buttons, or axis movement to logical actions in a game engine. The class provides an interface for defining and managing input mappings, which can be used to trigger specific actions in the game.
+The \ref InputMap class is responsible for mapping keyboard keys, gamepad buttons, or axis movement to logical actions in a game engine. The class provides an interface for defining and managing input mappings, which can be used to trigger specific actions in the game.
 
 The InputMap is serializable. You can define default map in game resources and override in a configuration folder. Because of that it is recommended to use the helper method to load the map:
 ```cpp
@@ -111,3 +111,172 @@ map->MapControllerAxis("Forward", CONTROLLER_AXIS_LEFTY, 0.0f, -1.0f);
 ```
 
 This code maps the negative Y-axis portion of the gamepad analog stick to affect the "Forward" action in your game. The neutral position of the Y-axis is set to 0.0f, which means that when the joystick is in its neutral position, the value of "Forward" will be 0.0f. The fully pressed position of the Y-axis is set to -1.0f, which means that when the axis is fully pressed forward, the value of "Forward" will be 1.0f.
+
+### Using InputMap to control character
+
+Because the InputMap is a SimpleResource the easiest way to use it in a component is to have an attribute of the InputMap resource type:
+
+```cpp
+void KinematicCharacter::RegisterObject(Context* context)
+{
+    // ....
+    URHO3D_MIXED_ACCESSOR_ATTRIBUTE(
+        "Input Map", GetInputMapAttr, SetInputMapAttr, ResourceRef, ResourceRef(InputMap::GetTypeStatic()), AM_DEFAULT);
+    // ....
+}
+
+void KinematicCharacter::SetInputMapAttr(const ResourceRef& value)
+{
+    auto* cache = GetSubsystem<ResourceCache>();
+    SetInputMap(cache->GetResource<InputMap>(value.name_));
+}
+
+ResourceRef KinematicCharacter::GetInputMapAttr() const
+{
+    return GetResourceRef(inputMap_, InputMap::GetTypeStatic());
+}
+
+void KinematicCharacter::SetInputMap(InputMap* inputMap)
+{
+    inputMap_ = inputMap;
+}
+```
+
+The InputMap is stateless and because of that it doesn't require any special handling.
+
+When you need to get a value for an action just call Evaluate method. In the following example if Crouch action value is not equal to 0 then the character height is halved:
+```cpp
+    if (inputMap_->Evaluate("Crouch"))
+    {
+        kinematicController_->SetHeight(0.9f);
+        kinematicController_->SetOffset(Vector3(0.0f, 0.45f, 0.0f));
+    }
+    else
+    {
+        kinematicController_->SetHeight(1.8f);
+        kinematicController_->SetOffset(Vector3(0.0f, 0.9f, 0.0f));
+    }
+```
+
+### InputMap file format
+
+InputMap is a \ref SimpleResource and by default is serialized in a JSON format:
+
+```json
+{
+	"actions": [
+		{
+			"key": "Left",
+			"value": {
+				"axes": [
+					{
+						"controller": true,
+						"pressed": -1.0
+					}
+				],
+				"keys": [
+					{
+						"scancode": "A"
+					},
+					{
+						"scancode": "Left"
+					}
+				]
+			}
+		},
+		{
+			"key": "Right",
+			"value": {
+				"axes": [
+					{
+						"controller": true
+					}
+				],
+				"keys": [
+					{
+						"scancode": "D"
+					},
+					{
+						"scancode": "Right"
+					}
+				]
+			}
+		}
+    ]
+}
+```
+
+The InputMap JSON file contains an array, each of which has a key and a value field. The key field is a string that represents the name of the action, while the value field is an object that contains several fields:
+
+```json
+"axes": [
+    {
+        "axis": 3,
+        "controller": true,
+        "neutral": 0.0,
+        "pressed": 1.0,
+    }
+]
+```
+- **axes**: The axes field is an array of objects that represent the controller’s axes mapping. Each object in the array has few fields
+  - **controller** which is a boolean value indicating whether the axis is controlled by a controller. False indicates that the mapping is for generic joystick and true indicates mapping for a gamepad detected by SDL. Default value of the field is false.
+  - **axis** which is an integer value indicating which axis is controlled by a controller. Default value of the field is 0.
+  - **neutral**, which is a floating-point value between -1.0 and 1.0 representing the neutral position of the axis. Default value of the field is 0.0.
+  - **pressed**, which is a floating-point value between -1.0 and 1.0 representing the fully pressed position of the axis. Default value of the field is 1.0.
+
+```json
+"keys": [
+    {
+        "scancode": "A"
+    },
+    {
+        "scancode": "Left"
+    }
+]
+```
+- **keys**: The keys field is an array of objects that represent the keyboard keys mapping. Each object in the array has few fields
+  - **scancode**, which is a string representing the scancode of the key. The full list of valid values would be too long and you can find it in the InputMap.cpp source file. Here are few notable mentions: "W", "A", "S", "D", "Left", "Right", "Down", "Up", "Escape", "Space".
+
+```json
+"buttons": [
+    {
+        "controller": true,
+        "button": "X"
+    }
+]
+```
+- **buttons**: The buttons field is an array of objects that represent the controller button mappings. Each object in the array has few fields
+  - **controller** which is a boolean value indicating whether the axis is controlled by a controller. False indicates that the mapping is for generic joystick and true indicates mapping for a gamepad detected by SDL. Default value of the field is false.
+  - **button**, for a controller the field contains button name and for generic joystick the field contains integer index of the button. Valid controller button names are "A", "B", "X", "Y", "Back", "Guide", "Start", "LeftStick", "RightStick", "LeftShoulder", "RightShoulder", "Up",
+        "Down", "Left", "Right", "Misc1", "Paddle1", "Paddle2", "Paddle3", "Paddle4", "Touchpad". Default value of the field is "A" or 0.
+
+```json
+"hats": [
+    {
+        "hat": "Down"
+    }
+]
+```
+- **hats**: The field is an array of objects that represent DPad mappings.
+  - **hat**, which is a string representing DPad direction. Valid values are "Up", "Right", "Down", "Left". Default value of the field is "Up".
+
+```json
+"mouseButtons": [
+    {
+        "button": "Right"
+    }
+]
+```
+- **mouseButtons**: The field is an array of objects that represent mouse button mappings.
+  - **button**, which is a string representing mouse button. Valid values are "Left", "Middle", "Right", "X1", "X2". Default value of the field is "Left".
+  
+```json
+"screenButtons": [
+    {
+        "elementName": "Button1"
+    }
+]
+```
+- **screenButtons**: The field is an array of objects that represent screen button mappings.
+  - **elementName**, which is a string representing UI \ref UIElement id.
+
