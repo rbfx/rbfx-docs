@@ -28,6 +28,7 @@ Documentation {#documentation}
         * \ref standard-network-objects
         * \ref standard-network-behaviors
     * \ref scene-and-animation
+        * \ref component-lifecycle
         * \ref scene-animation
     * \ref input
     * \ref ui-overview
