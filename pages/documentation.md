@@ -30,6 +30,8 @@ Documentation {#documentation}
     * \ref scene-and-animation
         * \ref component-lifecycle
         * \ref scene-animation
+        * \ref shake-component
+        * \ref camera-operator
     * \ref input
     * \ref ui-overview
 * Miscellaneous:
