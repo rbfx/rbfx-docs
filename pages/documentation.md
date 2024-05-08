@@ -32,6 +32,9 @@ Documentation {#documentation}
         * \ref scene-animation
         * \ref shake-component
         * \ref camera-operator
+    * \ref serialization-and-resources
+        * \ref archive
+        * \ref serializable-resource
     * \ref input
     * \ref ui-overview
 * Miscellaneous:
