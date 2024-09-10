@@ -219,11 +219,20 @@ To build a quaternion that rotates an object by 180 degrees around each axis (X,
 ```cpp
     // Quaternion for 180 degrees rotation around X-axis
     Quaternion rotationX{0.0f, 1.0f, 0.0f, 0.0f};
+```
+![180 degrees rotation around X-axis](images/documentation/math/x.gif)
+
+```cpp
     // Quaternion for 180 degrees rotation around Y-axis
     Quaternion rotationY{0.0f, 0.0f, 1.0f, 0.0f};
+```
+![180 degrees rotation around Y-axis](images/documentation/math/y.gif)
+
+```cpp
     // Quaternion for 180 degrees rotation around Z-axis
     Quaternion rotationZ{0.0f, 0.0f, 0.0f, 1.0f};
 ```
+![180 degrees rotation around Z-axis](images/documentation/math/z.gif)
 
 ### Quaternion Multiplication Order
 
