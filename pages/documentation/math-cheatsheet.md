@@ -138,7 +138,30 @@ Axis Z (Vector::FORWARD): { x, y, z } => {-y, x, z }
 
 In the engine, matrices are column-major (like in OpenGL) while in DirectX they are row-major.
 
+### Matrix Multiplication Order
+
 In general, for a column-vector on the right (OpenGL convention), M1 * (M2 * (M3 * v)) = (M1 M2 M3) * v, i.e. the left-most matrix is at the root node while the right-most is at the leaf node.
+
+When you apply multiple transformations (like translation, rotation, and scaling) to an object, the order in which you multiply the matrices matters. The general order is:
+
+- Scale
+- Rotate
+- Translate
+
+This order ensures that each transformation is applied correctly without unintended distortions. For example, if you scale an object first, then rotate it, the rotation will not affect the scale. Similarly, translating an object after scaling and rotating it ensures that the object moves to the correct position.
+
+### Mental Model for Applying Transformations
+
+To visualize how matrices are applied to object transformations, you can think of it as a series of steps:
+
+- Start with the object at the origin.
+- Apply scaling: This changes the size of the object.
+- Apply rotation: This rotates the object around the origin.
+- Apply translation: This moves the object to its final position.
+
+In the engine, this sequence is represented by multiplying the matrices in the reverse order of how you want the transformations to be applied. For example, if you want to scale, then rotate, and finally translate an object, you would multiply the translation matrix by the rotation matrix, and then by the scaling matrix.
+
+Below is a sample code demonstrating the order of matrix multiplication:
 
 ```cpp
     // Make Vector3
@@ -152,6 +175,15 @@ In general, for a column-vector on the right (OpenGL convention), M1 * (M2 * (M3
     Vector3 expl = rotation * (translation * vec3); //33, 22, -11
     Vector3 tr = (translation * rotation) * vec3; //13, 22, 29
 ```
+
+Alternatively, if you prefer a visual approach, here are some illustrations depicting the matrix multiplication sequence:
+
+#### translation * rotation:
+![translation * rotation](images/documentation/math/rotate-translate.gif)
+
+
+#### rotation * translation:
+![rotation * translation](images/documentation/math/translate-rotate.gif)
 
 ### Node transform matrices
 
@@ -181,6 +213,19 @@ When an animation is played, each joint in the skeleton is transformed by its an
 ```
 
 ## Quaternion operations
+
+To build a quaternion that rotates an object by 180 degrees around each axis (X, Y, and Z), you can use the axis-angle representation of quaternions. Here’s how you can do it:
+
+```cpp
+    // Quaternion for 180 degrees rotation around X-axis
+    Quaternion rotationX{0.0f, 1.0f, 0.0f, 0.0f};
+    // Quaternion for 180 degrees rotation around Y-axis
+    Quaternion rotationY{0.0f, 0.0f, 1.0f, 0.0f};
+    // Quaternion for 180 degrees rotation around Z-axis
+    Quaternion rotationZ{0.0f, 0.0f, 0.0f, 1.0f};
+```
+
+### Quaternion Multiplication Order
 
 Quaternion multiplication order is the same as with matrices. Here is an example to illustrate it:
 
