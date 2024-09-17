@@ -13,4 +13,6 @@ Framework Overview {#framework-overview}
 
 \subpage input
 
+\subpage inverse-kinematics
+
 \subpage ui-overview
