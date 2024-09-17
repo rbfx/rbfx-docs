@@ -29,3 +29,32 @@ Once you have set up your .assetworkflow file, you can add assets by copying the
 After the import process is complete, the generated files are stored in the Cache folder. You can access the imported assets in the Resources tab under the imported asset tree, as shown in the following screenshot:
 
 ![imported-resource.png](images/documentation/asset-workflow/imported-resource.png)
+
+
+## Coordinate System Conversion between Blender and Engine
+
+Blender and the engine use different coordinate systems. In Blender, the Z-axis represents the up direction, whereas in the engine, the Y-axis is used as the up direction. When processing assets from .blend files, everything will be rotated by 180 degrees when placed in the engine:
+
+![blender default rotation](images/documentation/asset-workflow/blender-initial.jpg) ![engine default import result](images/documentation/asset-workflow/engine-initial.jpg)
+
+To avoid this, you can bake the asset rotation in Blender.
+
+### Axis Conversion
+- **Blender X-axis**: Remains the X-axis in the engine, pointing right.
+- **Blender Y-axis**: Becomes the Z-axis in the engine, pointing forward.
+- **Blender Z-axis**: Becomes the Y-axis in the engine, pointing up.
+
+### Steps to Correct Orientation
+
+#### Rotate the Object’s Pivot:
+- Rotate the object by 180 degrees around the Z-axis.
+- Apply the rotation.
+
+![blender default rotation](images/documentation/asset-workflow/blender-rotate-pivot.jpg)
+
+#### Reorient the Object, save and import:
+
+Rotate the object again to maintain the correct orientation in space.
+After importing the object into the engine with the default rotation, the object’s orientation will match what you see in Blender’s viewport.
+
+![blender fixed rotation](images/documentation/asset-workflow/blender-result.jpg) ![engine import result](images/documentation/asset-workflow/engine-result.jpg)
