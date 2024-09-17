@@ -32,6 +32,7 @@ Documentation {#documentation}
         * \ref scene-animation
         * \ref shake-component
         * \ref camera-operator
+    * \ref inverse-kinematics
     * \ref serialization-and-resources
         * \ref archive
         * \ref serializable-resource
