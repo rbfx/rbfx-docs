@@ -37,24 +37,29 @@ Blender and the engine use different coordinate systems. In Blender, the Z-axis 
 
 ![blender default rotation](images/documentation/asset-workflow/blender-initial.jpg) ![engine default import result](images/documentation/asset-workflow/engine-initial.jpg)
 
-To avoid this, you can bake the asset rotation in Blender.
+To avoid this, you can model everything taking into account coordinate system transformation.
 
 ### Axis Conversion
-- **Blender X-axis**: Remains the X-axis in the engine, pointing right.
-- **Blender Y-axis**: Becomes the Z-axis in the engine, pointing forward.
-- **Blender Z-axis**: Becomes the Y-axis in the engine, pointing up.
 
-### Steps to Correct Orientation
+#### Blender’s Coordinate System:
+- Z-axis: Up
+- Y-axis: Forward
+- X-axis: Right
+#### Engine's Coordinate System:
+- Y-axis: Up
+- Z-axis: Forward
+- X-axis: Right
 
-#### Rotate the Object’s Pivot:
-- Rotate the object by 180 degrees around the Z-axis.
-- Apply the rotation.
+To convert coordinates from Blender to the engine, you need to remap the axes as follows:
 
-![blender default rotation](images/documentation/asset-workflow/blender-rotate-pivot.jpg)
+- Blender’s Z-axis (Up) becomes engine’s Y-axis (Up).
+- Blender’s X-axis (Right) becomes engine’s negative X-axis (Left).
+- Blender’s Y-axis (Forward) becomes engine’s negative Z-axis (Backward).
 
-#### Reorient the Object, save and import:
+So if you model in Blender taking into account axis conversion:
 
-Rotate the object again to maintain the correct orientation in space.
-After importing the object into the engine with the default rotation, the object’s orientation will match what you see in Blender’s viewport.
+![blender fixed rotation](images/documentation/asset-workflow/blender-result.jpg)
 
-![blender fixed rotation](images/documentation/asset-workflow/blender-result.jpg) ![engine import result](images/documentation/asset-workflow/engine-result.jpg)
+The result will naturally fit engine's coordinate system.
+
+![engine import result](images/documentation/asset-workflow/engine-result.jpg)
