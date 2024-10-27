@@ -27,7 +27,7 @@ rbfx uses the following third-party libraries:
 - Dear ImGui 1.86 (https://github.com/ocornut/imgui/tree/docking)
 - tracy 0.7.8 (https://bitbucket.org/wolfpld/tracy/)
 - capstone (http://www.capstone-engine.org/)
-- nativefiledialog (https://github.com/mlabbe/nativefiledialog)
+- nativefiledialog (https://github.com/btzy/nativefiledialog-extended)
 - IconFontCppHeaders (https://github.com/juliettef/IconFontCppHeaders)
 - ImGuizmo 1.61 (https://github.com/CedricGuillemet/ImGuizmo)
 - crunch (https://github.com/Unity-Technologies/crunch/)
