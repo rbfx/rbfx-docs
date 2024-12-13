@@ -168,3 +168,55 @@ Functions that reference playing animation by `Animation` will work with the lat
 |`UpdateAnimationTime`|Adjust time of the animation, keeping all other parameters intact.|
 |`UpdateAnimationWeight`|Adjust weight of the animation, keeping all other parameters intact.|
 |`UpdateAnimationSpeed`|Adjust speed of the animation, keeping all other parameters intact.|
+
+The Animation Controller orchestrates animations, ensuring they are applied in the correct order and allowing for smooth transitions between them. When a new animation is played, it is added to a list of active animations. The latest animation is layered on top of existing ones, influencing the final output.
+
+To illustrate this, consider the following sample diagram. Each column represents a moment in time. Starting with a base state where the Y animation is playing, we add an X animation. The diagram starts in the middle of transition to the X animation:
+
+![Base animation](images/documentation/animation/base_animation.png)
+
+In this scenario, we have two animations affecting the node's position:
+
+**"X" Animation**: Sets the node position to Vector3(1,0,0).
+
+**"Y" Animation**: Sets the node position to Vector3(0,1,0).
+
+This allows for easy tracking of the resulting node position after all animations are applied in order. The resulting node position is shown under the "Time" header.
+
+In the diagram, animations are shown in a visual stack order, with the latest animation added on top of existing ones. Let's examine the base state of the animation controller, where a Y animation is playing. If an X animation is added in an exclusive move, the Y animation will fade out (its weight decreasing every frame) while the X animation fades in (its weight increasing every frame). Observe how Y animation gets deleted when the weight of it goes to 0.
+
+Next, we call the Play* method again with the Y animation, observing how it impacts the current state.
+
+#### PlayNew
+
+Upon executing ```PlayNew```, a new instance of the Y animation is added regardless of any existing instances. This addition does not occur in exclusive mode, so the weight of the current X animation continues to increase. Consequently, we end up with both X and the latest Y animations in the list. The latest Y animation fully overrides the effect of the X animation. Meanwhile, the original Y animation is removed once it fades away.
+
+![PlayNew](images/documentation/animation/play_new.png)
+
+#### PlayNewExclusive
+
+When ```PlayNewExclusive``` is executed, it adds a new instance of the Y animation, disregarding any existing instances. This addition occurs in exclusive mode, causing the current X animation to start fading away. As a result, the list ends up with only one animation — the latest Y animation.
+
+![PlayNewExclusive](images/documentation/animation/play_new_exclisive.png)
+
+#### PlayExisting
+
+When ```PlayExisting``` is executed, it checks if the same animation (Y animation in this case) already exists. If it does, it boosts its weight to 1. Since this method doesn't play the animation in exclusive mode, the existing animations retain their dynamics.
+
+Below are two diagrams: one for when the Y animation exists in the list, and one for when it doesn't. Notice how the outcomes differ significantly. If the Y animation already exists, it is overridden by the later-added X animation, meaning PlayExisting doesn't alter the final node position and the animation time is preserved. 
+
+![PlayExisting](images/documentation/animation/play_existing.png)
+
+If Y doesn't exist, the new Y animation overrides the existing X animation, thus influencing the node's position.
+
+![PlayExisting](images/documentation/animation/play_non_existing.png)
+
+#### PlayExistingExclusive
+
+When ```PlayExistingExclusive``` is executed, it checks if the same animation (Y animation in this case) already exists. If it does, it boosts its weight to 1. Since this method plays the animation in exclusive mode, existing animations are faded away. Below are two diagrams: one for the scenario where the Y animation is already in the list, and one where it isn't. Notice that the results of this operation are similar. When the Y animation already exists, the animation time that dictates the phase of the animation is preserved. However, the dynamics differ in each case. When the Y animation already exists, the weight of X dictates the overall result.
+
+![PlayExistingExclusive](images/documentation/animation/play_existing_exclisive.png)
+
+In contrast, when the Y animation is newly added, its weight dictates the final node position.
+
+![PlayExistingExclusive](images/documentation/animation/play_non_existing_exclisive.png)
