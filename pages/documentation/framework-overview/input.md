@@ -250,6 +250,9 @@ The InputMap JSON file contains an array, each of which has a key and a value fi
   - **button**, for a controller the field contains button name and for generic joystick the field contains integer index of the button. Valid controller button names are "A", "B", "X", "Y", "Back", "Guide", "Start", "LeftStick", "RightStick", "LeftShoulder", "RightShoulder", "Up",
         "Down", "Left", "Right", "Misc1", "Paddle1", "Paddle2", "Paddle3", "Paddle4", "Touchpad". Default value of the field is "A" or 0.
 
+![XBox Gamepad Button Map](images/documentation/input/gamepad-buttons.jpg)
+
+
 ```json
 "hats": [
     {
