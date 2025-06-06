@@ -224,6 +224,8 @@ The InputMap JSON file contains an array, each of which has a key and a value fi
   - **neutral**, which is a floating-point value between -1.0 and 1.0 representing the neutral position of the axis. Default value of the field is 0.0.
   - **pressed**, which is a floating-point value between -1.0 and 1.0 representing the fully pressed position of the axis. Default value of the field is 1.0.
 
+![XBox Gamepad Axis Map](images/documentation/input/gamepad-axis.jpg)
+
 ```json
 "keys": [
     {
