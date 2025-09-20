@@ -2,3 +2,5 @@ cmake-build
 build/
 .directory
 cmake-build*
+*.exe
+*.dll

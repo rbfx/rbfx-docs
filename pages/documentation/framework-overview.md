@@ -9,6 +9,10 @@ Framework Overview {#framework-overview}
 
 \subpage scene-and-animation
 
+\subpage camera-operator
+
+\subpage shake-component
+
 \subpage serialization-and-resources
 
 \subpage input

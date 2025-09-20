@@ -6,7 +6,7 @@
 
 ## Manual Generation
 
-1. Install [Doxygen 1.8.17](https://doxygen.nl/download.html). **Newer Doxygen versions are currently broken!**
+1. Install [Doxygen 1.8.17](https://sourceforge.net/projects/doxygen/files/rel-1.8.17/). **Newer Doxygen versions are currently broken!**
 
 1. Clone or download both `rbfx` and `rbfx-docs` as sibling folders.
 
