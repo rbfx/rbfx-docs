@@ -1,9 +1,9 @@
 Home {#mainpage}
 ========================================
 
-[Documentation](@ref documentation)
-
 **Rebel Fork Framework** aka **rbfx** is an experimental fork of [Urho3D](https://github.com/urho3d/Urho3D) game engine distributed under [MIT license](https://github.com/rbfx/rbfx/blob/master/LICENSE).
+
+[Documentation](@ref documentation)
 
 **Rebel Fork Framework** is:
 

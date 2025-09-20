@@ -3,10 +3,10 @@ Documentation {#documentation}
 
 * \subpage build
 * \subpage folder-structure
-* \subpage math-cheatsheet
+* \ref math-cheatsheet
 * \subpage framework-overview
-    * \ref cpp-quick-start.md
-    * \ref csharp-quick-start.md 
+    * \ref cpp-quick-start
+    * \ref csharp-quick-start
     * \ref asset-workflow
     * \ref graphics-and-rendering
         * \ref rendering-low-level-api
@@ -33,7 +33,7 @@ Documentation {#documentation}
     * \ref scene-and-animation
         * \ref component-lifecycle
         * \ref scene-animation
-        * \subpage shake-component
+        * \ref shake-component
         * \ref camera-operator
     * \ref inverse-kinematics
     * \ref serialization-and-resources
