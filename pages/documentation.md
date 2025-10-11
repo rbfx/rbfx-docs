@@ -3,10 +3,7 @@ Documentation {#documentation}
 
 * \subpage build
 * \subpage folder-structure
-* \ref math-cheatsheet
 * \subpage framework-overview
-    * \ref cpp-quick-start
-    * \ref csharp-quick-start
     * \ref asset-workflow
     * \ref graphics-and-rendering
         * \ref rendering-low-level-api
@@ -41,8 +38,7 @@ Documentation {#documentation}
         * \ref serializable-resource
     * \ref input
     * \ref ui-overview
-* Miscellaneous:
-    * \subpage project-goals
+* \subpage project-goals
 
 **TODO: These pages are outdated**:
 
